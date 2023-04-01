@@ -42,7 +42,7 @@ app.post("/", function(req, res) {
 
   const options={
     method:"POST",
-    auth:`vaibhav1:${process.env.API}`
+    auth:`vaibhav:${process.env.API}`
   };
 
   const request=https.request(url,options,function(response){
@@ -71,8 +71,3 @@ app.post("/failure",function(req,res){
 app.listen(3000, function(){
   console.log("server is running on port 3000");
 });
-
-
-
-//api key 88130d5d4625d5ed1772340bf71b897e-us21
-// list id  2a0301c120.
