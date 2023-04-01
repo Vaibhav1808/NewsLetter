@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const https=require('https');
 const app = express();
 require('dotenv').config()
+const path = require('path')
+
 
 const port = 3000;
 
@@ -11,7 +13,8 @@ app.use(bodyParser.urlencoded({
     extended: true
   }));
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/index.html");
