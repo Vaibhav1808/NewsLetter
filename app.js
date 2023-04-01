@@ -1,16 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const request = require('request');
 const https=require('https');
 const app = express();
 require('dotenv').config()
+
+const port = 3000;
 
 
 app.use(bodyParser.urlencoded({
     extended: true
   }));
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 
 app.get("/", function(req, res) {
@@ -68,6 +69,6 @@ app.post("/failure",function(req,res){
   res.redirect("/");
 })
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("server is running on port 3000");
 });
